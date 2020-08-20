@@ -1,0 +1,354 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Tahoma;
+}
+html
+{
+    scroll-behavior: smooth;
+}
+body
+{
+    width: 100%;
+    cursor: url(img/mouse.png), auto;
+}
+/* NAVBAR -------------------------------------------------------------------*/
+.header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 100000;
+}
+.header.sticky
+{
+    padding: 5px 100px;
+    background: #fff;
+    opacity: 50%;
+}
+.header .logo
+{
+    position: relative;
+    font-weight: 700;
+    padding-right: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    /* text-transform: uppercase; */
+    font-family: 'Pacifico';
+    letter-spacing: 2px;
+    transition: 0.6s;
+    cursor: url(img/mouse-pointer.png), pointer;
+} 
+.header ul
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+.header ul li
+{
+    position: relative;
+    list-style: none;
+}
+.header ul li a
+{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    font-family: 'Audiowide', cursive;
+    color: #fff;
+    letter-spacing: none;
+    font-weight: bolder;
+    transition: 0.6s;
+    cursor: url(img/mouse-pointer.png), pointer;
+}
+.header.sticky .logo,
+.header.sticky ul li a
+{
+    color: #000;
+} 
+.header li:hover
+{
+    transform: scale(1.1);
+}
+.header li:hover a
+{
+    color: #4d81cf !important;
+}
+/*BANNER----------------------------------------------------*/
+.banner
+{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url('img/wallpapper_00.jpg'), linear-gradient(230deg, #f533d4, #2461bb);
+    background-blend-mode: luminosity;
+    background-size: cover;
+}
+/* SCROLL-BAR-CUSTOM -----------------------------------------------------------------------*/
+::-webkit-scrollbar
+{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(transparent, #F533D4, #2461BB);
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background: linear-gradient(transparent, #2461BB, #F533D4);
+    border-radius: 6px;
+}
+/* LOGIN BOX ---------------------------------*/
+.box{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 400px;
+	padding: 40px;
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	border-radius: 10px;
+}
+.box h2{
+	margin: 0 0 30px;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+}
+.box .inputBox{
+	position: relative;
+}
+.box .inputBox input{
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background: transparent;
+}
+.box .inputBox label{
+	position: absolute;
+	top:0;
+	left:0;
+	padding: 10px 0;
+	font-size:16px;
+	color: #fff;
+	pointer-events: none;
+	transition: .5s;
+}
+.box .inputBox input:focus ~ label, 
+.box .inputBox input:valid ~ label
+{
+	top:-20px;
+	left: 0;
+	color: #03a9f4;
+	font-size: 12px;
+}
+
+.inputBox i.fa-eye
+{
+    position: absolute;
+    top: 10%;
+    right: 0;
+    color: rgb(160, 160, 160);
+}
+/* SUBMIT-BUTTON ---------------------------------------------------------------------*/
+.box .submit_btn a{
+    position: relative;
+    display: block;
+    width: 100px;
+	text-align: center;
+    border: 2px solid #00aeff;
+    border-radius: 20px;
+	text-transform: uppercase;
+	font-size: 15px;
+	letter-spacing: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	text-decoration: none;
+	overflow: hidden;
+    color:#00aeff;
+    cursor: url(img/mouse-pointer.png), pointer;
+}
+
+.box .submit_btn a:hover{
+	color: white;
+}
+
+.box .submit_btn a span{
+	position: relative;
+	z-index: 1;
+	transition: 1s;
+}
+.box .submit_btn input
+{
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    color: #00aeff;
+    font-size: 1rem;
+    transition: 0.5s;
+    outline: none;
+    letter-spacing: 1px;
+    margin: 0px;
+    cursor: url(img/mouse-pointer.png), pointer;
+}
+.box .submit_btn:hover input
+{
+    color: rgb(255, 255, 255);
+}
+.box .submit_btn a .btn_wave{
+	position: absolute;
+	top: calc(100% + 20px);
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #00aeff;
+	transition: 1s;
+}
+
+.box .submit_btn a:hover .btn_wave{
+	top: 0;
+}
+
+.box .submit_btn a .btn_wave:before{
+	content: '';
+	position: absolute;
+	top: -20px;
+	left: 0;
+	width: 100%;
+	height: 22px;
+	background: url("img/btn_wave.png");
+	animation: animate 1.5s linear infinite;
+}
+/* DON'T HAVE AN ACCOUNT---------------------------------------------------------- */
+.box .swap
+{
+    margin-top: 10px;
+    text-align: center;
+}
+.box .swap span
+{
+    margin-top: 10px;
+    color: whitesmoke;
+    text-align: center;
+}
+.box .swap a
+{
+    border: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    text-decoration: solid !important;
+    color: #00aeff;
+    transition: 0.2s;
+}
+.box .swap a:hover
+{
+    color: rgb(206, 206, 206);
+    cursor: url(img/mouse-pointer.png), pointer;
+}
+@keyframes animate
+{
+    0%
+    {
+        background-position-x: 0;
+		background-position-y: -22;
+    }
+    100%
+    {
+        background-position-x:118px;
+			background-position-y: -22;
+    }
+}
+/* WAVE-FOOTER -------------------------------------------------------------------*/
+.background-footer
+{
+   position:absolute;
+   bottom: 0;
+   left: 0;
+   width:100%;
+   height:10vh;  
+}
+.background-footer .wave
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(img/wave.png);
+    background-size: 1000px 100px;
+}
+.background-footer .wave.wave1
+{
+    animation: animate 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+.background-footer .wave.wave2
+{
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+.background-footer .wave.wave3
+{
+    animation: animate2 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15;
+}
+.background-footer .wave.wave4
+{
+    animation: animate2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20;
+}
+@keyframes animate
+{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x:1000px;
+    }
+}
+@keyframes animate2
+{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x:-1000px;
+    }
+}
